@@ -149,3 +149,40 @@ services:
 ``` 
 
 **Ответ**  
+Создадим файлы конфигурации согласно заданию:
+<img src="img/img13.jpg" width="100%">
+Запустим docker compose up -d и увидим что запустился конфиг compose.yaml, потому что 
+именно его Docker Compose выбирает по умолчанию согласно официальной документации.
+<img src="img/img14.jpg" width="100%">
+Редактируем compose.yaml что бы запускались оба конфига и сразу проверим, что всё работает.
+<img src="img/img15.jpg" width="100%">
+
+Сделаем тэг для локального регистри и зальём его :
+
+<img src="img/img16.jpg" width="100%">
+Настроим Portainer
+<img src="img/img17.jpg" width="100%">
+<img src="img/img18.jpg" width="100%">
+Добавим наш образ и задеплоим его.
+Видим что наша страница открывается корректно.
+<img src="img/img19.jpg" width="100%">
+
+Проверка в Portainer
+<img src="img/img20.jpg" width="100%">
+<img src="img/img21.jpg" width="100%">
+<img src="img/img22.jpg" width="100%">
+<img src="img/img23.jpg" width="100%">
+<img src="img/img24.jpg" width="100%">
+<img src="img/img25.jpg" width="100%">
+<img src="img/img26.jpg" width="100%">
+
+Проверка warning при удалении манифеста
+<img src="img/img27.jpg" width="100%">
+
+
+Docker Compose видит, что есть работающие сервисы, созданные из проекта, но нет исходного файла compose.yaml.
+Он предупреждает, что не сможет корректно управлять этими контейнерами.
+
+Поскольку у нас был запущен проект и мы удалили файл конфигурации compose , то при повторном запуске создаются новые контейнеры с новыми именами. 
+Что мы погасить всё одной командой, нужно пгасить по проектам. Смотрим имя проекта который запскал контейнеры docker compose ls и гасим.
+<img src="img/img27.jpg" width="100%">
